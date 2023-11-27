@@ -22,6 +22,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           check-latest: true
+      - run: npm install
+        working-directory: javascript
       - name: Run Tests
         run: |
           cd javascript
