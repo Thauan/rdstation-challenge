@@ -1,0 +1,28 @@
+# .github/workflows/javascript.yml
+name: "[RD Station] Run Tests - Javascript"
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          node-version: [18.x]
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        run: 'node -v'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          check-latest: true
+      - name: Run Tests
+        run: |
+          cd javascript
+          npm run test
