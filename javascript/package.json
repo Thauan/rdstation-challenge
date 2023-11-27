@@ -1,0 +1,21 @@
+{
+  "name": "rd-challenges",
+  "version": "1.0.0",
+  "main": "customer-success-balancing.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "testMatch": [
+      "**/*.js"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!d3-(array|format|geo))"
+    ]
+  }
+}
