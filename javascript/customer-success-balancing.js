@@ -171,3 +171,19 @@ test("Scenario 8", () => {
   const csAway = [2, 4];
   expect(customerSuccessBalancing(css, customers, csAway)).toEqual(1);
 });
+
+test('should create a customer object with default values', () => {
+  const customer = new Customer({ id: 1, score: 100 });
+
+  expect(customer.id).toBe(1);
+  expect(customer.score).toBe(100);
+  expect(customer.customerSuccess).toEqual([]);
+});
+
+test('should create a customer success object with default values', () => {
+  const customerSuccess = new CustomerSuccess({ id: 2, score: 200 });
+
+  expect(customerSuccess.id).toBe(2);
+  expect(customerSuccess.score).toBe(200);
+  expect(customerSuccess.customers).toEqual([]);
+});
